@@ -1,5 +1,5 @@
 /**
- * @author Eli
+ * @author Eli Fox-Epstein
  */
  public class TuringMachineWithNoSemicolons {
     /* ARGS:
@@ -9,11 +9,18 @@
      *  3: transition table (prefix "ABCDE" means at state A, if read a B, move C, write D, go to state E)
      *  4: reject state
      *  5: accept state
-     *  6: flag
-     *  7: scratch
      * 
-     * Example use:
-     * java TuringMachineWithNoSemicolons 10011011011011X A 0 A0R1AA1R0AAXRX+ - +
+     * Example use: a turing machine that recognizes the languages of words of the form: 0^jELI
+     *
+     * One way to write a machine for this is with the following rules:
+     *      at A, if 0, move R, write _, goto A
+     *      at A, if E, move R, write _, goto B
+     *      at B, if L, move R, write _, goto C
+     *      at C, if I, move R, write _, goto +
+     * A test case:
+     *      java TuringMachineWithNoSemicolons 00000ELI A 0 A0R_AAER_BBLR_CCIR_+ - +
+     *
+     * This machine will not halt on most inputs.
      */
     public static void main(String[] args) {
         while(!args[1].equals(args[4]) && !args[1].equals(args[5])){
