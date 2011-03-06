@@ -1,0 +1,1005 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Rule 110</title> 
+        <style type="text/css" media="screen">
+            body {
+                -webkit-animation: bugfix infinite 1s;
+                font-family: "Courier New";
+                font-size: 28px;
+            }
+            @-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+            
+            /*  111 110 101 100 011 010 001 000
+                 0   1   1   0   1   1   1  0   */  
+                             
+            body > input {
+                -webkit-appearance: none;
+                display: block;
+                float: left;
+                border-right: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                padding: 5px 12px;
+                margin: 0;
+            }
+            body > input::before {
+                content: "0";
+            }
+                                 
+            body > input:nth-of-type(-n+30) { border-top: 1px solid #ddd; }
+            body > input:nth-of-type(30n+1) { border-left: 1px solid #ddd; clear: left; }
+            
+            body > input::before { content: "0"; }
+            
+            body > input:checked::before { content: "1"; }
+            body > input:checked         { background: #afa !important; }
+                        
+            
+            input:not(:checked) +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input::before {
+                content: "1";
+            }
+            input:not(:checked) +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input {
+                background: #fa0;
+            }
+            
+
+            input:checked +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input::before { 
+                content: "1";
+            }
+            input:checked +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input { 
+                background: #fa0;
+            }
+
+ 
+            input:checked +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input::before {
+                content: "1";
+            }           
+            input:checked +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input {
+                background: #fa0;
+            }
+            
+            input:checked + input:checked + input:checked +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input::before {
+                content: "0";
+            }
+            input:checked + input:checked + input:checked +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input {
+                background: #fff;
+            }
+            
+            input:not(:checked) + input:not(:checked) + input:not(:checked) +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input::before {
+                content: "0";
+            }
+            input:not(:checked) + input:not(:checked) + input:not(:checked) +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+
+                    input {
+                background: #fff;
+            }
+            
+            body > input:nth-child(30n) { display: none !important; }
+            body > input:nth-child(30n) + label { display: none !important; }
+            
+        </style>
+    </head> 
+    
+    <body>
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+
+    </body> 
+</html>

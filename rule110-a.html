@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Rule 110</title> 
+        <style type="text/css" media="screen">
+            body { -webkit-animation: bugfix infinite 1s; }
+            @-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+            
+            /*  111 110 101 100 011 010 001 000
+                 0   1   1   0   1   1   1  0   */                    
+                    
+            .a1 { background: #0f0; }
+            .a2 { background: #f00; }
+            .a3 { background: #f00; padding: 2px; }    
+              
+            .c3:checked  ~ div > .a1             { background: #f00;    }
+            .c3:checked  ~ div > .a1 > .a2       { background: #0f0;    }
+            .c3:checked  ~ div > .a1 > .a2 > .a3 { background: #0f0;    }
+            .c2:checked  ~ div > .a1 > .a2       { background: inherit; }
+            .c2:checked  ~ div > .a1 > .a2 > .a3 { background: #0f0;    }            
+            .c1:checked  ~ div > .a1 > .a2 > .a3 { background: inherit; }
+        </style>
+    </head> 
+    
+    <body> 
+        <div>
+            <input type="checkbox" class="c1"/><input type="checkbox" class="c2" /> <input type="checkbox" class="c3" /> 
+            <div>
+                <span class="a1"><span class="a2"><span class="a3">oh hi</span></span></span>
+            </div>
+        </div>
+    </body> 
+</html>

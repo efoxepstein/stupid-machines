@@ -1,0 +1,455 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+        <title>Rule 110</title> 
+        <style type="text/css" media="screen">
+            body {
+                -webkit-animation: bugfix infinite 1s;
+                font-family: "Courier New";
+                font-size: 28px;
+                padding: 3em;
+                margin: 3em;
+            }
+            @-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+            
+            /*  111 110 101 100 011 010 001 000
+                 0   1   1   0   1   1   1  0   */  
+                 
+            input { display: none; position: absolute; top: -1000px; left: -1000px; }            
+            
+            body > label {
+                display: block;
+                float: left;
+                border-right: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                padding: 5px 12px;
+            }
+                                 
+            body > label:nth-of-type(-n+11) { border-top: 1px solid #ddd; }
+            body > label:nth-of-type(11n+2) { border-left: 1px solid #ddd; clear: left; }
+            body > input:nth-of-type(-n+11) { display: none; }
+            
+            body > label::before { content: "0"; }
+            
+            body > input:checked + label::before { content: "1"; }
+            body > input:checked + label { background: #afa !important; }
+            
+            div { clear: both; }
+            
+            
+            
+            input:not(:checked) +*+ input +*+ input
+                    +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ input {
+                display: block;
+            }
+            input:not(:checked) +*+ input +*+ input
+                    +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ label {
+                background: #fa0;
+            }
+            
+            input:checked +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ input { 
+                display: block;
+            }
+            input:checked +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ label { 
+                background: #fa0;
+            }
+            
+            *+*+ input:checked +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ input {
+                display: block;
+            }
+            *+*+ input:checked +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ label {
+                background: #fa0;
+            }
+            
+            input:checked +*+ input:checked +*+ input:checked
+                    +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ input {
+                display: none;
+            }
+            input:checked +*+ input:checked +*+ input:checked
+                    +*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ label {
+                background: #fff;
+            }
+            
+            input:not(:checked) +*+ input:not(:checked) +*+ input:not(:checked) +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ input {
+                display: none;
+            }
+            input:not(:checked) +*+ input:not(:checked) +*+ input:not(:checked) +
+                    *+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+ label {
+                background: #fff;
+            }
+
+            input:focus + label {
+                background: #f0f !important;
+                position: absolute;
+                width: 1000px;
+                height: 1000px;
+            }
+            
+            .hidden { display: none !important; }
+            .hidden + label { display: none !important; }
+            
+
+            #infobox {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 350px;   
+            }
+            
+            #messages{
+                list-style-type: none;
+                background: #e60;
+                color: #fff;
+                padding: 13px 2.5em 13px 13px;
+                font-weight: bold;
+                font-family: 'Lucida Grande', 'Lucida Sans', arial, 'Helvetica';
+            }
+            
+            #messages li {
+                margin: 0;
+                padding: 0;
+                display: none;
+            }
+
+            #ready:not(:checked) ~ #messages li:first-child {
+                display: inline;
+            }
+            #ready:checked ~ #messages li:first-child{
+                display: none;
+            }
+            
+            #ready:checked ~ #messages li:nth-child(2){
+                display: inline;
+            }
+            input:focus:not(:checked) ~ div #messages li:nth-child(2) {
+                display: none !important;
+            }
+            
+            input:focus:not(:checked) ~ div #messages li:last-child {
+                display: inline;
+            }
+            
+            #slides {
+                background: #fff;
+                list-style-type: none;
+            }
+            
+            #slides li label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #fff;
+                z-index: 100;
+            }
+            
+            #slides p, #slides h1 {
+                padding: 0 30px;
+            }
+            
+            #slides li input:checked + label {
+                display: none;
+            }
+            
+        </style>
+    </head> 
+    
+    <body>       
+            <ul id="slides">
+                <li>
+                    <input type="checkbox" id="slide4" />
+                    <label for="slide4">  
+                        <h1>Heck yeah!</h1>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="slide3" />
+                    <label for="slide3">  
+                        <h1>Turing Completeness</h1>
+                        <p>Turing machine</p>
+                        <p>Lambda Calculus</p>
+                        <p>Prolog, C, Java, Javascript, etc.</p>
+                        <p>2,3 Turing machine, Game of Life</p>
+                        <p><strong>HTML/CSS?</strong></p>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="slide2" />
+                    <label for="slide2">  
+                        <h1>Turing Completeness</h1>
+                        <p>Turing machine</p>
+                        <p>Lambda Calculus</p>
+                        <p>Prolog, C, Java, Javascript, etc.</p>
+                        <p>2,3 Turing machine, Game of Life</p>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="slide1" />
+                    <label for="slide1">  
+                        <h1>CSS is awful, right?</h1>
+                        <p>Vertical alignment. No variables. No iteration or branching.</p>
+                        <p>Bad reference sites. -moz, -webkit. IE.</p>
+                        <p>No one obeys standards.</p>
+                        <p>Yay, CSS presentation.</p>
+                    </label> 
+                </li>
+            </ul>
+            
+            
+            <input type="checkbox" id="cp0" class="hidden" />
+            <label for="cp0"></label>
+            
+            <input type="checkbox" id="c0"/>
+            <label for="c0"></label>
+            <input type="checkbox" id="c1"/>
+            <label for="c1"></label>
+            <input type="checkbox" id="c2"/>
+            <label for="c2"></label>
+            <input type="checkbox" id="c3"/>
+            <label for="c3"></label>
+            <input type="checkbox" id="c4"/>
+            <label for="c4"></label>
+            <input type="checkbox" id="c5"/>
+            <label for="c5"></label>
+            <input type="checkbox" id="c6"/>
+            <label for="c6"></label>
+            <input type="checkbox" id="c7"/>
+            <label for="c7"></label>
+            <input type="checkbox" id="c8"/>
+            <label for="c8"></label>
+            <input type="checkbox" id="c9"/>
+            <label for="c9"></label>
+            
+            <input type="checkbox" id="cp10" class="hidden" />
+            <label for="cp10"></label>
+            
+            <input type="checkbox" id="c10"/>
+            <label for="c10"></label>
+            <input type="checkbox" id="c11"/>
+            <label for="c11"></label>
+            <input type="checkbox" id="c12"/>
+            <label for="c12"></label>
+            <input type="checkbox" id="c13"/>
+            <label for="c13"></label>
+            <input type="checkbox" id="c14"/>
+            <label for="c14"></label>
+            <input type="checkbox" id="c15"/>
+            <label for="c15"></label>
+            <input type="checkbox" id="c16"/>
+            <label for="c16"></label>
+            <input type="checkbox" id="c17"/>
+            <label for="c17"></label>
+            <input type="checkbox" id="c18"/>
+            <label for="c18"></label>
+            <input type="checkbox" id="c19"/>
+            <label for="c19"></label>
+            
+            <input type="checkbox" id="cp20" class="hidden" />
+            <label for="cp20"></label>
+            
+            <input type="checkbox" id="c20"/>            
+            <label for="c20"></label>
+            <input type="checkbox" id="c21"/>
+            <label for="c21"></label>
+            <input type="checkbox" id="c22"/>
+            <label for="c22"></label>
+            <input type="checkbox" id="c23"/>
+            <label for="c23"></label>
+            <input type="checkbox" id="c24"/>
+            <label for="c24"></label>
+            <input type="checkbox" id="c25"/>
+            <label for="c25"></label>
+            <input type="checkbox" id="c26"/>
+            <label for="c26"></label>
+            <input type="checkbox" id="c27"/>
+            <label for="c27"></label>
+            <input type="checkbox" id="c28"/>
+            <label for="c28"></label>
+            <input type="checkbox" id="c29"/>
+            <label for="c29"></label>
+            
+            
+            <input type="checkbox" id="cp30" class="hidden" />
+            <label for="cp30"></label>
+            
+            <input type="checkbox" id="c30"/>
+            <label for="c30"></label>
+            <input type="checkbox" id="c31"/>
+            <label for="c31"></label>
+            <input type="checkbox" id="c32"/>
+            <label for="c32"></label>
+            <input type="checkbox" id="c33"/>
+            <label for="c33"></label>
+            <input type="checkbox" id="c34"/>
+            <label for="c34"></label>
+            <input type="checkbox" id="c35"/>
+            <label for="c35"></label>
+            <input type="checkbox" id="c36"/>
+            <label for="c36"></label>
+            <input type="checkbox" id="c37"/>
+            <label for="c37"></label>
+            <input type="checkbox" id="c38"/>
+            <label for="c38"></label>
+            <input type="checkbox" id="c39"/>
+            <label for="c39"></label>
+            
+            <input type="checkbox" id="cp40" class="hidden" />
+            <label for="cp40"></label>
+            
+            <input type="checkbox" id="c40"/>
+            <label for="c40"></label>
+            <input type="checkbox" id="c41"/>
+            <label for="c41"></label>
+            <input type="checkbox" id="c42"/>
+            <label for="c42"></label>
+            <input type="checkbox" id="c43"/>
+            <label for="c43"></label>
+            <input type="checkbox" id="c44"/>
+            <label for="c44"></label>
+            <input type="checkbox" id="c45"/>
+            <label for="c45"></label>
+            <input type="checkbox" id="c46"/>
+            <label for="c46"></label>
+            <input type="checkbox" id="c47"/>
+            <label for="c47"></label>
+            <input type="checkbox" id="c48"/>
+            <label for="c48"></label>
+            <input type="checkbox" id="c49"/>
+            <label for="c49"></label>
+            
+            <input type="checkbox" id="cp50" class="hidden" />
+            <label for="cp50"></label>            
+            
+            <input type="checkbox" id="c50"/>
+            <label for="c50"></label>
+            <input type="checkbox" id="c51"/>
+            <label for="c51"></label>
+            <input type="checkbox" id="c52"/>
+            <label for="c52"></label>
+            <input type="checkbox" id="c53"/>
+            <label for="c53"></label>
+            <input type="checkbox" id="c54"/>
+            <label for="c54"></label>
+            <input type="checkbox" id="c55"/>
+            <label for="c55"></label>
+            <input type="checkbox" id="c56"/>
+            <label for="c56"></label>
+            <input type="checkbox" id="c57"/>
+            <label for="c57"></label>
+            <input type="checkbox" id="c58"/>
+            <label for="c58"></label>
+            <input type="checkbox" id="c59"/>
+            <label for="c59"></label>
+            
+            <input type="checkbox" id="cp60" class="hidden" />
+            <label for="cp60"></label>
+            
+            
+            <input type="checkbox" id="c60"/>
+            <label for="c60"></label>
+            <input type="checkbox" id="c61"/>
+            <label for="c61"></label>
+            <input type="checkbox" id="c62"/>
+            <label for="c62"></label>
+            <input type="checkbox" id="c63"/>
+            <label for="c63"></label>
+            <input type="checkbox" id="c64"/>
+            <label for="c64"></label>
+            <input type="checkbox" id="c65"/>
+            <label for="c65"></label>
+            <input type="checkbox" id="c66"/>
+            <label for="c66"></label>
+            <input type="checkbox" id="c67"/>
+            <label for="c67"></label>
+            <input type="checkbox" id="c68"/>
+            <label for="c68"></label>
+            <input type="checkbox" id="c69"/>
+            <label for="c69"></label>
+            
+            <input type="checkbox" id="cp70" class="hidden" />
+            <label for="cp70"></label>
+            
+            <input type="checkbox" id="c70"/>
+            <label for="c70"></label>
+            <input type="checkbox" id="c71"/>
+            <label for="c71"></label>
+            <input type="checkbox" id="c72"/>
+            <label for="c72"></label>
+            <input type="checkbox" id="c73"/>
+            <label for="c73"></label>
+            <input type="checkbox" id="c74"/>
+            <label for="c74"></label>
+            <input type="checkbox" id="c75"/>
+            <label for="c75"></label>
+            <input type="checkbox" id="c76"/>
+            <label for="c76"></label>
+            <input type="checkbox" id="c77"/>
+            <label for="c77"></label>
+            <input type="checkbox" id="c78"/>
+            <label for="c78"></label>
+            <input type="checkbox" id="c79"/>
+            <label for="c79"></label>
+            
+            
+            <input type="checkbox" id="cp80" class="hidden" />
+            <label for="cp80"></label>
+            
+            <input type="checkbox" id="c80"/>
+            <label for="c80"></label>
+            <input type="checkbox" id="c81"/>
+            <label for="c81"></label>
+            <input type="checkbox" id="c82"/>
+            <label for="c82"></label>
+            <input type="checkbox" id="c83"/>
+            <label for="c83"></label>
+            <input type="checkbox" id="c84"/>
+            <label for="c84"></label>
+            <input type="checkbox" id="c85"/>
+            <label for="c85"></label>
+            <input type="checkbox" id="c86"/>
+            <label for="c86"></label>
+            <input type="checkbox" id="c87"/>
+            <label for="c87"></label>
+            <input type="checkbox" id="c88"/>
+            <label for="c88"></label>
+            <input type="checkbox" id="c89"/>
+            <label for="c89"></label>
+            
+            <input type="checkbox" id="cp90" class="hidden" />
+            <label for="cp20"></label>
+            
+            <input type="checkbox" id="c90"/>
+            <label for="c90"></label>
+            <input type="checkbox" id="c91"/>
+            <label for="c91"></label>
+            <input type="checkbox" id="c92"/>
+            <label for="c92"></label>
+            <input type="checkbox" id="c93"/>
+            <label for="c93"></label>
+            <input type="checkbox" id="c94"/>
+            <label for="c94"></label>
+            <input type="checkbox" id="c95"/>
+            <label for="c95"></label>
+            <input type="checkbox" id="c96"/>
+            <label for="c96"></label>
+            <input type="checkbox" id="c97"/>
+            <label for="c97"></label>
+            <input type="checkbox" id="c98"/>
+            <label for="c98"></label>
+            <input type="checkbox" id="c99"/>
+            <label for="c99"></label>
+
+        <div id="infobox">
+            <input type="checkbox" id="ready" />
+            <ul id="messages">
+                <li><label for="ready">Set up top row and click me when ready</label></li>
+                <li>Tap tab.</li>
+                <li>Press space.</li>
+            </ul>
+        </div>
+        
+    </body> 
+</html>
