@@ -82,9 +82,6 @@
 
             input:focus + label {
                 background: #f0f !important;
-                position: absolute;
-                width: 1000px;
-                height: 1000px;
             }
             
             .hidden { display: none !important; }
@@ -130,74 +127,11 @@
             input:focus:not(:checked) ~ div #messages li:last-child {
                 display: inline;
             }
-            
-            #slides {
-                background: #fff;
-                list-style-type: none;
-            }
-            
-            #slides li label {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: #fff;
-                z-index: 100;
-            }
-            
-            #slides p, #slides h1 {
-                padding: 0 30px;
-            }
-            
-            #slides li input:checked + label {
-                display: none;
-            }
-            
+
         </style>
     </head> 
     
-    <body>       
-            <ul id="slides">
-                <li>
-                    <input type="checkbox" id="slide4" />
-                    <label for="slide4">  
-                        <h1>Heck yeah!</h1>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" id="slide3" />
-                    <label for="slide3">  
-                        <h1>Turing Completeness</h1>
-                        <p>Turing machine</p>
-                        <p>Lambda Calculus</p>
-                        <p>Prolog, C, Java, Javascript, etc.</p>
-                        <p>2,3 Turing machine, Game of Life</p>
-                        <p><strong>HTML/CSS?</strong></p>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" id="slide2" />
-                    <label for="slide2">  
-                        <h1>Turing Completeness</h1>
-                        <p>Turing machine</p>
-                        <p>Lambda Calculus</p>
-                        <p>Prolog, C, Java, Javascript, etc.</p>
-                        <p>2,3 Turing machine, Game of Life</p>
-                    </label>
-                </li>
-                <li>
-                    <input type="checkbox" id="slide1" />
-                    <label for="slide1">  
-                        <h1>CSS is awful, right?</h1>
-                        <p>Vertical alignment. No variables. No iteration or branching.</p>
-                        <p>Bad reference sites. -moz, -webkit. IE.</p>
-                        <p>No one obeys standards.</p>
-                        <p>Yay, CSS presentation.</p>
-                    </label> 
-                </li>
-            </ul>
-            
+    <body>          
             
             <input type="checkbox" id="cp0" class="hidden" />
             <label for="cp0"></label>
