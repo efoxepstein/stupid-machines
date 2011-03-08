@@ -1,14 +1,16 @@
-l = [%[o1o]] + [%[ooo]] + [%[111]]
-o = %[11oo1]
+ppp = %[11pp1]
+pppp = [%[p1p]] + [%[ppp]] + [%[111]]
 
-loop {
-  p o
-  o[1[1]] == [][1[1]] && lllll
-  o[1[1]] == %[1] && o=o[1,11111111111]+l[1[1]]
-  o[1[1]] == %[o] && o=o[1,11111111111]
-  l = l[1,1111111111111]+[l[1[1]]]
+ppppp = ->{
+  p ppp
+  ppp[1[1]] == [][1[1]] && ppppppppp
+  ppp[1[1]] == %[1] && ppp=ppp[1,11111111111]+pppp[1[1]]
+  ppp[1[1]] == %[p] && ppp=ppp[1,11111111111]
+  pppp = pppp[1,111111111111]+[pppp[1[1]]]
+  ppppp[]
 }
 
+ppppp[]
 
 # The above program uses these characters:
-#     <space>, <new line>, l, o, p, %, 1, [, ], {, }, =, +, <comma>
+#     <space>, <new line>, p, %, 1, [, ], {, }, =, +, -, >, <comma>
