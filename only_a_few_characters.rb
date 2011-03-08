@@ -1,4 +1,4 @@
-l = %w[o1o ooo 1111]
+l = [%[o1o]] + [%[ooo]] + [%[111]]
 o = %[11oo1]
 
 loop {
@@ -11,4 +11,4 @@ loop {
 
 
 # The above program uses these characters:
-#     <space>, <new line>, l, o, p, %, w, 1, [, ], {, }, =, +, <comma>
+#     <space>, <new line>, l, o, p, %, 1, [, ], {, }, =, +, <comma>
