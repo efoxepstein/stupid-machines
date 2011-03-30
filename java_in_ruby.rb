@@ -8,10 +8,8 @@ args = Class.new { def [] ; end }.new
 
 System = OpenStruct.new(out: STDOUT)
 
-class IO
-  def println(str)
-    puts str
-  end
+def STDOUT.println(str)
+  puts str
 end
 
 public static void main(String args[]){
