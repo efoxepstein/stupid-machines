@@ -1,16 +1,2 @@
-ppp = %[11pp1]
-pppp = [%[p1p]] + [%[ppp]] + [%[111]]
-
-ppppp = ->{
-  p ppp
-  ppp[1[1]] == [][1[1]] && ppppppppp
-  ppp[1[1]] == %[1] && ppp=ppp[1,11111111111]+pppp[1[1]]
-  ppp[1[1]] == %[p] && ppp=ppp[1,11111111111]
-  pppp = pppp[1,111111111111]+[pppp[1[1]]]
-  ppppp[]
-}
-
-ppppp[]
-
-# The above program uses these characters:
-#     <space>, <new line>, p, %, 1, [, ], {, }, =, +, -, >, <comma>
+# Cyclic Tag System starting with 11001 with rules 010, 000, 111
+a,b,i,c='11001',%w[010 000 111],-1,->{p a;a>'09'&&a+=b[i+=1];b<<b[0];a[0]&&c[]};c[]
