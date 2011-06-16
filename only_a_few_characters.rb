@@ -1,2 +1,2 @@
-# Cyclic Tag System starting with 11001 with rules 010, 000, 111
-a,b,i,c='11001',%w[010 000 111],-1,->{p a;a>'09'&&a+=b[i+=1];b<<b[0];a[0]&&c[]};c[]
+# Cyclic Tag System starting with 11001 with rules 010, 000, 1111
+a,b,i,c='11001',%w[010 000 1111],0,->{(p a[i..-1])>'09'&&a+=b[i%3];a[i+=1]&&c[]};c[]
