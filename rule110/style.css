@@ -1,0 +1,220 @@
+/* Generic styling */
+body {
+  -webkit-animation: bugfix infinite 1s;
+  font-family: "Courier New";
+  font-size: 20px;
+  margin: 3em 1em;
+}
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+*, body, html, a, label {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+/* Hide checkboxes, links */
+input.A, input.B, a { display: none; }
+
+/* Divs just clear, used only for style */
+div { clear: both; }
+
+/* When checkboxes aren't display:none, don't actually show */
+input.A, input.B { position: absolute; top: -1000px; left: -1000px; }            
+
+/* Some element to start the tab-order */
+#start-focus { position: absolute; top: -1000px; left: -1000px; width: 1px; height: 1px; }
+#start-focus:not(:focus)::after{
+  position: fixed;
+  top:0;
+  left:0;
+  font-size: 40px;
+  content: "[TAB]";
+  background: #fff;
+  padding: 3px;
+}
+
+/* Label styling for the grid */
+label {
+  display: block;
+  float: left;
+  padding: 1px 5px;
+  margin: 2px;
+  background: #ddd;
+}
+                     
+/* Inactive labels show "0" */
+label::before { content: "0"; }
+
+/* Active labels show "1" and get highlight */
+input.A:checked + label::before { content: "1"; }
+input.A:checked + label { background: #afa !important; }
+
+input:focus + label {
+  background: #f0f !important; 
+}
+
+/* If we're targetting an unselected checkbox, make its label big so
+ * we can click it
+ */
+input.A:target:not(:checked) + label {
+  display:block;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 1000;
+}
+input.A:target:not(:checked) + label::before {
+  font-size: 40px;
+  content: "[CLICK]"
+}
+
+/* Normally, links have display:none.
+ * However, if we show them, put a message in the top left.
+ *
+ * Encourages the user to tab to the link, then once
+ * focused, tells used to navigate to the anchor to which it points.
+ */
+a:before {
+  position: fixed; top: 0; left: 0; font-size: 40px; content: "[CLICK]";
+  background: #fff; width: 100%; height:100%; z-index: 99; color: #000;
+}
+
+/* Normally, B-class checkboxes have display:none.
+ * However, if we show them, it's because we want the user to
+ * check it to mark that we've processed it.
+ */
+#start-focus:focus ~ input.B:not(:checked)::before {
+  position: fixed; top: 0; left: 0; font-size: 40px; content: "[TAB]";
+  background: white; height: 50px; width: 100%; padding: 3px;
+}
+input.B:not(:checked):focus::before {
+  position: fixed; top: 0; left: 0; font-size: 40px; content: "[SPACE]";
+  background: white; height: 50px; width: 100%; padding: 3px;
+}
+
+/* A quick reminder of the rules:
+ *
+ *  111 110 101 100 011 010 001 000
+ *   0   1   1   0   1   1   1   0
+ *
+ *
+ * The rest of the CSS implements the rules.
+ * Each rule of the form "xyz => 1" has a set of 4 CSS rules.
+ * Each CSS rule matches with the required input box checkedness pattern
+ * and then uses the focus and checked states of #start-focus and the corresponding
+ * .B element to remove display:none from the appropriate elements, allowing
+ * tabbing to the appropriate elements.
+ */  
+
+#start-focus:focus ~
+input:checked +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + input.B:not(:checked) {
+  display: block;
+}
+
+input:checked +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + input.B:focus {
+  display: block;
+}
+
+input:checked +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + .B:checked:focus + a {
+  display: block;
+}
+
+input:checked +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + .B:checked + a:focus {
+  display: block;
+}
+
+#start-focus:focus ~
+input:checked +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + input.B:not(:checked) {
+  display: block;
+}
+
+input:checked +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + input.B:focus {
+  display: block;
+}
+
+input:checked +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + .B:checked:focus + a {
+  display: block;
+}
+
+input:checked +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + .B:checked + a:focus {
+  display: block;
+}
+
+#start-focus:focus ~
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:checked
++ label + input.B:not(:checked) {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:checked
++ label + input.B:focus {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:checked
++ label + .B:checked:focus + a {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:checked
++ label + .B:checked + a:focus {
+  display: block;
+}
+
+#start-focus:focus ~
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + input.B:not(:checked) {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + input.B:focus {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + .B:checked:focus + a {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:checked +*+*+*+ input:not(:checked)
++ label + .B:checked + a:focus {
+  display: block;
+}
+
+
+#start-focus:focus ~
+input:not(:checked) +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + input.B:not(:checked) {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + input.B:focus {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + .B:checked:focus + a {
+  display: block;
+}
+
+input:not(:checked) +*+*+*+ input:not(:checked) +*+*+*+ input:checked
++ label + .B:checked + a:focus {
+  display: block;
+}
+
