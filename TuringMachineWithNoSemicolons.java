@@ -21,6 +21,7 @@
      *      java TuringMachineWithNoSemicolons 00000ELI A 0 A0R_AAER_BBLR_CCIR_+ - +
      *
      * This machine will not halt on most inputs.
+     * TODO: use stream() api with lambda expressions.
      */
     public static void main(String[] args) {
         while(!args[1].equals(args[4]) && !args[1].equals(args[5])){
