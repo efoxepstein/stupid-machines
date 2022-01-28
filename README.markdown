@@ -2,6 +2,8 @@
 ### Is bunch of useless implementations of our favorite abstract machines, including Turing machines, the Rule 110 cellular automata, and cyclic tag systems.
  <img src="https://user-images.githubusercontent.com/29699356/151624859-f7abc5b3-52e1-4e1a-881d-1bfac61e3832.png" height="300">
 
+# Live demo:
+[Here](./rul110)
 ## rule110
 Implements rule 110 in HTML and CSS3. This is a more correct "proof" that CSS is Turing-complete.
 <img src="https://user-images.githubusercontent.com/29699356/151625734-1a840406-1fe2-4664-95d2-861819d21336.png" height="300">
